@@ -1,7 +1,7 @@
 import os
 
 # 指定输入文件所在的目录
-input_dir = 'vasp'
+input_dir = 'origin'
 
 # 指定输出文件所在的目录
 output_dir = 'abacus-stru'
