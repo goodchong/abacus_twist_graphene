@@ -12,11 +12,12 @@ if not os.path.exists(output_dir):
 
 # 遍历输入目录中的所有文件
 for filename in sorted(os.listdir(input_dir)):
-    if filename.startswith('POSCAR.') and filename.endswith('.vasp'):
+    if filename.startswith('POSCAR.'):
         input_file = os.path.join(input_dir, filename)
         
         # 提取文件名中的数字部分
-        numbers = filename[7:-5].split('-')
+        numbers = filename[7:].split('-')
+        print(numbers)
         output_filename = f"graphene_{int(numbers[0]):02d}_{int(numbers[1]):02d}"
         output_file = os.path.join(output_dir, output_filename)
         
