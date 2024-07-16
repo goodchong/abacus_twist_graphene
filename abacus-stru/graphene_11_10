@@ -1,8 +1,8 @@
 ATOMIC_SPECIES
-C 6.000 /mnt/C_ONCV_PBE-1.0.upf
+C 6.000 ./C_ONCV_PBE-1.0.upf
 
 NUMERICAL_ORBITAL
-/mnt/C_gga_8au_100Ry_2s2p1d.orb
+./C_gga_8au_100Ry_2s2p1d.orb
 
 LATTICE_CONSTANT
 1.889716
