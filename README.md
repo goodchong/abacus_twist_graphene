@@ -34,14 +34,3 @@ ABACUS calculation input files for twisted graphene.
 
 !!!!!!!
 
-To make parallel computation more symmetrical, some examples are rotated：
-
-graphene_06_05
-
-graphene_07_06
-
-graphene_14_13
-
-graphene_30_29
-
-graphene_31_30

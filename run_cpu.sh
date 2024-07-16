@@ -17,13 +17,15 @@ do
         # 将文件拷贝到新创建的文件夹中，并重命名为 "STRU"
         cp "$file" "result/$current_time/$filename/STRU"
         cp INPUT_cpu "result/$current_time/$filename/INPUT"
+        cp C_ONCV_PBE-1.0.upf "result/$current_time/$filename/"
+        cp C_gga_8au_100Ry_2s2p1d.orb "result/$current_time/$filename/"
 
         # 进入新创建的文件夹
         pushd "result/$current_time/$filename"
         echo "Running $filename"
 
         # 运行可执行文件（假设可执行文件名为 "executable"）
-        /mnt/abacus-develop/build/abacus
+        OMP_NUM_THREADS=1 mpirun -np 16 ./abacus-develop/build/abacus
         
         # 返回到原始目录
         popd

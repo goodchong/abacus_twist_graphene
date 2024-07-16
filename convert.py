@@ -1,5 +1,5 @@
 import os
-
+import re
 # 指定输入文件所在的目录
 input_dir = 'origin'
 
@@ -16,7 +16,7 @@ for filename in sorted(os.listdir(input_dir)):
         input_file = os.path.join(input_dir, filename)
         
         # 提取文件名中的数字部分
-        numbers = filename[7:].split('-')
+        numbers = re.split('[.-]', filename[7:]) #filename[7:].split('-')
         print(numbers)
         output_filename = f"graphene_{int(numbers[0]):02d}_{int(numbers[1]):02d}"
         output_file = os.path.join(output_dir, output_filename)
@@ -40,10 +40,10 @@ for filename in sorted(os.listdir(input_dir)):
         # 写入输出文件
         with open(output_file, 'w') as file:
             file.write('ATOMIC_SPECIES\n')
-            file.write('C 6.000 /mnt/C_ONCV_PBE-1.0.upf\n\n')
+            file.write('C 6.000 ./C_ONCV_PBE-1.0.upf\n\n')
             
             file.write('NUMERICAL_ORBITAL\n')
-            file.write('/mnt/C_gga_8au_100Ry_2s2p1d.orb\n\n')
+            file.write('./C_gga_8au_100Ry_2s2p1d.orb\n\n')
             
             file.write('LATTICE_CONSTANT\n')
             file.write('1.889716\n\n')
